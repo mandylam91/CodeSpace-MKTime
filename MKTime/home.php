@@ -1,3 +1,10 @@
+<!-- Start Session and Logout Nav-->
+
+<?php
+    include ( 'session.php' ) ;
+    include ( 'includes/nav_logout.php' ) ;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +13,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HOME HOME HOME</h1>
-    
-   
+    <!--  Calling user session data and displaying -->
+
 <?php
     include ( 'session.php' ) ;
 

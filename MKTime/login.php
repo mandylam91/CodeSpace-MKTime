@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK Time</title>
-</head>
-<body>
-    
+
+<!-- Include HTML Structure and Navbar -->
+
 <?php 
-include ( 'includes/nav.php' ) ;
+
+include ( 'includes/nav.php' ) ; 
+
 # Display any error messages if present.
+
 if ( isset( $errors ) && !empty( $errors ) )
 {
+
  echo '<p id="err_msg">Oops! There was a problem:<br>' ;
- foreach ( $errors as $msg ) { echo " - $msg<br>" ; }
+ foreach ( $errors as $msg )
+  { echo " - $msg<br>" ; }
+
  echo 'Please try again or <a href="register.php">Register</a></p>' ;
+
 }
 ?>
 
-
+<!-- Login Form -->
 <div class="container">
     <div class="row">
         <div class="col-sm">
@@ -44,10 +45,11 @@ if ( isset( $errors ) && !empty( $errors ) )
                                                 placeholder="* Enter Password">
             
                                     </div>
-                                    <input type="submit" value="Login">
+                                    <button type="submit" class="btn btn-dark w-100">Log In</button>
+
                                 </div>
                             </div>
-                        </form><!-- closing form -->
+                        </form>
                     </div>
                 </div>
             </div>
@@ -56,13 +58,12 @@ if ( isset( $errors ) && !empty( $errors ) )
 </div>
 
    
-<!-- Footer -->
+<!-- Include required JS and Jquery in Footer -->
 <?php
     include ( 'includes/footer.php' ) ;
 ?>
     
 
-</body>
-</html>
 
+    
 
