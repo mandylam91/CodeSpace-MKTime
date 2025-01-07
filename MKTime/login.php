@@ -55,9 +55,14 @@ if ( isset( $errors ) && !empty( $errors ) )
     </div>
 </div>
 
-
+   
+<!-- Footer -->
+<?php
+    include ( 'includes/footer.php' ) ;
+?>
     
 
 </body>
 </html>
+
 
