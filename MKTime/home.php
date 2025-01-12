@@ -1,8 +1,8 @@
 <!-- Start Session and Logout Nav-->
 
 <?php
-    include ( 'session.php' ) ;
-    include ( 'includes/nav_logout.php' ) ;
+    
+    include ( 'includes/nav.php' ) ;
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +13,12 @@
     <title>Document</title>
 </head>
 <body>
-    <!--  Calling user session data and displaying -->
+    <div>
 
-<?php
-    include ( 'session.php' ) ;
+            <img src="img/home.jpg" class="img-fluid" alt="home">
+    </div>
 
-?>
+
 
 </body>
 </html>

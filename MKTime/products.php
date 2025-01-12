@@ -2,17 +2,13 @@
 
 // Include session and logout NAV
 include('session.php');
-include ( 'includes/nav_logout.php' ) ;
+include ('includes/nav_logout.php') ;
 
     // Open database connection
-    require('includes/connect_db.php');
+require('includes/connect_db.php');
 
 ?>
 
-<h1>Hello, <?php
-	echo "{$_SESSION['first_name']} {$_SESSION['last_name']}";
-	?>
-</h1>
 
 
 <div class="container">
@@ -28,48 +24,41 @@ include ( 'includes/nav_logout.php' ) ;
 			echo '<div class="container mt-4">';
 			echo '<div class="row">';
 
-	while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-    // Product variables
-    $productName = htmlspecialchars($row['item_name']); 
-    $productDescription = htmlspecialchars($row['item_desc']); 
-    $productPrice = htmlspecialchars($row['item_price']);
-    $productImage = htmlspecialchars($row['item_img']);  
-    // Bootstrap card 
-    echo '<div class="col-md-4 mb-4">';
-    echo '  <div class="card h-100">';
-    echo '    <img src="' . $productImage . '" class="card-img-top" alt="' . $productName . '">';
-    echo '    <div class="card-body">';
-    echo '      <h5 class="card-title">' . $productName . '</h5>';
-    echo '      <p class="card-text">' . $productDescription . '</p>';
-    echo '      <p class="card-text"><strong>Price:</strong> £' . $productPrice . '</p>';
-    echo '    </div>';
-    echo '    <div class="card-footer">';
-    echo '      <a href="#" class="btn btn-primary">Buy Now</a>';
-    echo '    </div>';
-    echo '  </div>';
-    echo '</div>';
-}
-		}
-		else { echo '<p>There are currently no items in the table to display.</p>'; }
 		
+while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
+	{
+	echo '
+    <div class="col-md-4 d-flex justify-content-center">
+	 <div class="card" style="width: 18rem;">
+	  <img src="'. $row['item_img'].'" class="card-img-top" alt="'. $row['item_name'].'">
+	   <div class="card-body text-center">
+		<h5 class="card-title">'. $row['item_name'].'</h5>
+		<p class="card-text">'. $row['item_desc'].'</p>
+	 </div>
+	  <div class="card-footer bg-transparent border-dark text-center">
+		<p class="card-text">&pound '. $row['item_price'].'</p>
+	  </div>
+	  <div class="card-footer text-muted">
+		<a href="added.php?id='.$row['item_id'].'" class="btn btn-light btn-block">Add to Cart</a>
+	   </div>
+	  </div>
+	</div>  
+	';
+
+	}
 
 echo '</div>'; // End of row
 echo '</div>'; // End of container
 				
-		
-
-		
-			
-// # Or display this error message..
-// 	else { echo '<p>There are currently no items in the table to display.</p>'; }
-		
-
 	
+			
+# Or display this error message..
+	// else { echo '<p>There are currently no items in the table to display.</p>'; }
+		
 	# Close database connection.
 	mysqli_close( $link) ; 
 		
-
-
+}
 		
 include ('includes/footer.php');
 		

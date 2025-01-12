@@ -18,7 +18,9 @@ crossorigin="anonymous">
   <body>
   
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">MK Time</a>
+  <a class="navbar-brand" href="home.php"><?php
+  echo "{$_SESSION['first_name']} {$_SESSION['last_name']}";
+  ?></a>
   <button class="navbar-toggler" type="button" 
 data-toggle="collapse" 
 data-target="#navbarNav" 
@@ -28,6 +30,12 @@ aria-expanded="false" aria-label="Toggle navigation">
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" href="products.php">Products</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="cart.php">Cart</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>
       </li>

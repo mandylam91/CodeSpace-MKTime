@@ -18,7 +18,7 @@ crossorigin="anonymous">
   <body>
   
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">MK Time</a>
+  <a class="navbar-brand" href="home.php">MK Time</a>
   <button class="navbar-toggler" type="button" 
 data-toggle="collapse" 
 data-target="#navbarNav" 
@@ -31,9 +31,6 @@ aria-expanded="false" aria-label="Toggle navigation">
       <li class="nav-item active">
         <a class="nav-link" href="products.php">Products
            <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.php">About</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="register.php">Register</a>
